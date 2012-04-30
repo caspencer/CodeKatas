@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xunit;
 
 namespace StringCalculator.Tests
@@ -49,7 +45,7 @@ namespace StringCalculator.Tests
         {
             var calc = new StringCalc();
             var exception = Assert.Throws<ArgumentOutOfRangeException>(() => calc.Add("-1"));
-            Assert.Equal("negatives not allowed: -1\r\nParameter name: input", exception.Message);            
+            Assert.Equal("negatives not allowed: -1\r\nParameter name: input", exception.Message);
         }
 
         [Fact]
