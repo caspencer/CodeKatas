@@ -39,12 +39,15 @@ namespace StringCalculator
             var numbers = input.Split(delimiters.ToArray(), StringSplitOptions.None);
             foreach (var number in numbers)
             {
-                int numberVal = Convert.ToInt32(number);
-                if (numberVal < 0)
-                    negativeNumbers.Add(numberVal);
+                int numberVal;
+                if (int.TryParse(number, out numberVal))
+                {
+                    if (numberVal < 0)
+                        negativeNumbers.Add(numberVal);
 
-                if (numberVal <= 1000)
-                    sum += numberVal;
+                    if (numberVal <= 1000)
+                        sum += numberVal;
+                }
             }
 
             if (negativeNumbers.Count > 0)
